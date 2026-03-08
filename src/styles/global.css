@@ -394,6 +394,17 @@ p {
   font-weight: 600;
 }
 
+.timeline-company a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.timeline-company a:hover {
+  color: var(--accent);
+}
+
 .detail-list {
   margin: 1rem 0 0;
   padding-left: 1.2rem;

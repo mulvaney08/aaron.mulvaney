@@ -13,9 +13,9 @@ const { projects } = Astro.props;
   <div class="shell">
     <SectionHeading
       id="projects-title"
-      eyebrow="Projects"
-      title="Selected work that demonstrates judgment, execution, and polish."
-      intro="These examples are structured to show the problem, the delivery approach, and the result."
+      eyebrow="Impact Highlights"
+      title="Representative initiatives with clear operational and delivery outcomes."
+      intro="Each highlight shows the challenge, execution approach, and practical business impact."
     />
     <div class="project-grid">
       {projects.map((project) => (
@@ -31,8 +31,14 @@ const { projects } = Astro.props;
           </ul>
           <p class="project-outcome">{project.outcome}</p>
           <div class="project-links">
-            <a href={project.href} target="_blank" rel="noreferrer">Live Link</a>
-            <a href={project.repo} target="_blank" rel="noreferrer">Source</a>
+            {project.href && (
+              <a href={project.href} target={project.href.startsWith("#") ? undefined : "_blank"} rel={project.href.startsWith("#") ? undefined : "noreferrer"}>
+                {project.href.startsWith("#") ? "View Experience Context" : "External Reference"}
+              </a>
+            )}
+            {project.repo && (
+              <a href={project.repo} target="_blank" rel="noreferrer">Source</a>
+            )}
           </div>
         </article>
       ))}

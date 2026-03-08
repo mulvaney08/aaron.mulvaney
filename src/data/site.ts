@@ -6,6 +6,7 @@ export type SocialLink = {
 export type ExperienceItem = {
   role: string;
   company: string;
+  companyHref?: string;
   location: string;
   start: string;
   end: string;
@@ -31,180 +32,211 @@ export type EducationItem = {
 
 export const siteData = {
   seo: {
-    title: "Aaron Mulvaney | Senior Product & Engineering Leader",
+    title: "Aaron Mulvaney | Staff Operations Engineer & Agile Delivery Lead",
     description:
-      "Single-page resume and portfolio for Aaron Mulvaney, highlighting leadership, product thinking, technical execution, and measurable delivery impact.",
+      "Staff Operations Engineer and Agile Delivery Lead with 8+ years improving reliability, accelerating delivery, and scaling support outcomes across enterprise platforms.",
     ogImage: "assets/og-image.svg"
   },
   hero: {
     name: "Aaron Mulvaney",
-    title: "Senior Product & Engineering Leader",
+    title: "Staff Operations Engineer & Agile Delivery Lead",
     value:
-      "I build reliable digital products, align cross-functional teams, and turn complex roadmaps into measurable business outcomes.",
-    location: "Based in the United States",
+      "Staff-level operations and delivery leader driving measurable platform outcomes through automation, incident reduction, and cross-functional execution.",
+    location: "Dublin, Ireland",
     ctas: [
-      { label: "View Projects", href: "#projects", kind: "primary" },
-      { label: "Contact Me", href: "#contact", kind: "secondary" }
+      { label: "View Experience", href: "#experience", kind: "primary" },
+      { label: "Contact Me", href: "#contact", kind: "secondary" },
     ],
     socialLinks: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/your-profile" },
-      { label: "GitHub", href: "https://github.com/your-handle" },
-      { label: "Email", href: "mailto:hello@example.com" }
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/aaronmulvaney/" },
+      { label: "Email", href: "mailto:aaronmulvaney@gmail.com" },
+      { label: "Resume Source Code", href: "https://github.com/mulvaney08/aaron.mulvaney" },
     ] satisfies SocialLink[],
     stats: [
-      { value: "12+", label: "Years delivering digital products" },
-      { value: "$8M+", label: "Revenue and efficiency impact influenced" },
-      { value: "30+", label: "Product launches and major initiatives" }
+      { value: "8+", label: "Years in platform operations and delivery" },
+      { value: "Millions", label: "Customer issues resolved via operational solutions" },
+      { value: "$1M+", label: "Revenue protected by a single operational solution" }
     ]
   },
   about: {
-    heading: "I lead with clarity, execution discipline, and product judgment.",
+    heading: "I lead platform operations with measurable delivery and reliability outcomes.",
     body: [
-      "My work sits at the intersection of strategy, delivery, and technical depth. I partner with stakeholders to define the right bets, then build the systems and operating cadence needed to ship them well.",
-      "I am most effective in environments that value ownership, direct communication, thoughtful design, and a strong bias toward outcomes over activity."
+      "I partner across engineering, product, support, and leadership to ship critical services reliably and improve operational performance at scale.",
+      "My work focuses on durable systems: automation that removes manual load, practices that improve predictability, and operating models that sustain quality over time."
     ]
   },
   experience: [
     {
-      role: "Head of Product Engineering",
-      company: "Northstar Digital",
-      location: "Remote",
-      start: "2021",
+      role: "Staff Operations Engineer & Agile Delivery Lead",
+      company: "HMH",
+      companyHref: "https://www.hmhco.com/",
+      location: "Dublin",
+      start: "November 2022",
       end: "Present",
       summary:
-        "Own platform strategy, delivery planning, and engineering execution for a multi-product B2B portfolio.",
+        "Own delivery and operations for mission-critical platform services, combining staff-level technical leadership with Agile execution across cross-functional teams.",
       highlights: [
-        "Directed a portfolio modernization program that cut release lead time by 42 percent across three core products.",
-        "Established product discovery and technical design rituals that improved roadmap confidence and reduced rework.",
-        "Scaled cross-functional delivery by introducing clearer planning, success metrics, and architecture decision records."
+        "Designed and continuously improved large-scale operational solutions that resolved millions of customer account issues, including a single solution that protected over $1 million in revenue.",
+        "Led end-to-end delivery of a mission-critical license management microservice, coordinating cross-functional dependencies, risks, and release execution across engineering, product, and operations.",
+        "Improved MTTR and support scalability by defining operating models, strengthening knowledge systems, and introducing AI-ready operational frameworks."
       ]
     },
     {
-      role: "Senior Product Manager",
-      company: "Lattice Commerce",
-      location: "Chicago, IL",
-      start: "2017",
-      end: "2021",
+      role: "Senior Technical Solutions Consultant",
+      company: "LinkedIn",
+      companyHref: "https://www.linkedin.com/",
+      location: "Dublin",
+      start: "March 2021",
+      end: "November 2022",
       summary:
-        "Led customer-facing platform initiatives spanning growth, internal tooling, and analytics infrastructure.",
+        "Led high-impact enterprise advertiser issue resolution and operational improvements across sales, GTM, product, and engineering stakeholders.",
       highlights: [
-        "Launched a self-serve onboarding experience that increased activation by 26 percent within two quarters.",
-        "Partnered with engineering and design to reduce checkout friction, contributing to a 14 percent lift in conversion.",
-        "Built a more rigorous experimentation framework that improved prioritization and executive reporting."
+        "Led a support-wide Agile transformation that moved the team from reactive operations to structured, measurable delivery with improved transparency and prioritization.",
+        "Implemented workflow and KPI frameworks that exposed previously untracked advisory and consultation effort, enabling better capacity planning and clearer revenue-impact reporting.",
+        "Owned resolution of complex enterprise advertising issues while acting as the technical bridge between sales, customers, product, and engineering across the EMEAL region."
       ]
     },
     {
-      role: "Digital Strategy Consultant",
-      company: "Independent",
-      location: "Various Clients",
-      start: "2013",
-      end: "2017",
+      role: "Application Support Engineer",
+      company: "HMH",
+      companyHref: "https://www.hmhco.com/",
+      location: "Dublin",
+      start: "March 2019",
+      end: "March 2021",
       summary:
-        "Advised startups and service firms on product positioning, UX improvements, and lean delivery practices.",
+        "Led critical support and automation initiatives for education platforms during high-volume periods, with direct impact on reliability and customer outcomes.",
       highlights: [
-        "Delivered discovery workshops, roadmap resets, and website rebuilds for clients across professional services and SaaS.",
-        "Translated stakeholder goals into implementable scopes, reducing ambiguity and accelerating vendor handoff.",
-        "Created reusable content and analytics frameworks to support more effective lead generation."
+        "Delivered one of HMH's most significant Back to School outcomes by partnering with engineering and vendor teams on solutions that resolved about 80 percent of identity and authentication issues.",
+        "Served as Team Lead and senior L3 escalation point for business-critical incidents, improving incident response quality and service restoration across multiple platforms.",
+        "Built and maintained Python and shell automation, operational reporting (Metabase/JIRA/PostgreSQL), and internal support tooling to reduce manual effort and improve MTTR."
+      ]
+    },
+    {
+      role: "Associate Consultant",
+      company: "Version 1",
+      companyHref: "https://www.version1.com/",
+      location: "Dublin",
+      start: "June 2018",
+      end: "March 2019",
+      summary:
+        "Delivered middleware integration enhancements and production support across live enterprise data flows.",
+      highlights: [
+        "Delivered customer-requested enhancements for enterprise middleware integrations, translating business requirements into deployable workflow and data-flow improvements.",
+        "Designed and maintained XML/XSD message mappings to support accurate client-specific data transformations across inbound and outbound integrations.",
+        "Owned production issue triage and customer communications to maintain SLA performance and reliable live-system operations."
       ]
     }
   ] satisfies ExperienceItem[],
   skills: [
     {
-      category: "Leadership",
+      category: "Operations & Delivery",
       items: [
-        "Product strategy",
-        "Roadmap planning",
-        "Cross-functional leadership",
-        "Stakeholder alignment",
-        "Team mentoring"
-      ]
-    },
-    {
-      category: "Delivery",
-      items: [
-        "Agile execution",
-        "Discovery facilitation",
-        "Requirements shaping",
-        "Experiment design",
-        "Operational process design"
+        "Platform operations and reliability",
+        "Agile project management (Jira, Confluence)",
+        "Incident and escalation management",
+        "Root cause analysis (RCA)",
+        "Operational metrics and trend analysis"
       ]
     },
     {
       category: "Technical",
       items: [
-        "Web architecture",
-        "Analytics instrumentation",
-        "Accessibility",
-        "Performance optimization",
-        "Design systems"
+        "SQL and PostgreSQL",
+        "Python automation and scripting",
+        "REST API integrations",
+        "Systems integration",
+        "Technical troubleshooting"
+      ]
+    },
+    {
+      category: "Leadership & Enablement",
+      items: [
+        "Service ownership and support model design",
+        "Cross-functional delivery leadership",
+        "Technical documentation and knowledge systems",
+        "Stakeholder communication and alignment",
+        "Onboarding and knowledge transfer"
       ]
     }
   ],
   projects: [
     {
-      title: "Executive Portfolio Dashboard",
+      title: "Customer Account Resolution Program",
       summary:
-        "Designed and shipped a leadership dashboard that connected product health, delivery status, and commercial metrics in one view.",
-      stack: ["Astro", "TypeScript", "Charting", "Analytics"],
-      outcome: "Reduced manual executive reporting effort from days to hours each month.",
-      href: "https://example.com/project-dashboard",
-      repo: "https://github.com/your-handle/project-dashboard"
+        "Designed and implemented large-scale operational solutions to resolve recurring customer account issues at scale.",
+      stack: ["Operations Engineering", "Automation", "RCA", "Support Tooling"],
+      outcome: "Resolved millions of customer account issues and earned HMH Standing Ovation recognition in November 2025.",
+      href: "#experience",
+      repo: ""
     },
     {
-      title: "Client Acquisition Site Refresh",
+      title: "License Management Microservice Delivery",
       summary:
-        "Rebuilt a professional services marketing site with stronger messaging, faster page loads, and better lead capture flow.",
-      stack: ["Astro", "Content strategy", "SEO", "CSS"],
-      outcome: "Improved qualified inbound conversion and created a more credible first impression for enterprise buyers.",
-      href: "https://example.com/project-refresh",
-      repo: "https://github.com/your-handle/project-refresh"
+        "Led end-to-end delivery of a mission-critical license management microservice across multiple workstreams.",
+      stack: ["Agile Delivery", "Microservices", "Cross-functional Planning", "Risk Management"],
+      outcome: "Maintained delivery momentum through dependency management, stakeholder alignment, and continuous ceremony improvements.",
+      href: "#experience",
+      repo: ""
     },
     {
-      title: "Internal Workflow Platform",
+      title: "Kubernetes Migration Initiative",
       summary:
-        "Led the design of an internal platform that unified request intake, triage, and decision tracking across departments.",
-      stack: ["React", "Node.js", "PostgreSQL", "Automation"],
-      outcome: "Removed duplicate work and shortened request response cycles by over 30 percent.",
-      href: "https://example.com/project-workflow",
-      repo: "https://github.com/your-handle/project-workflow"
+        "Led migration of critical microservices from Mesos to Kubernetes within HMH platform operations.",
+      stack: ["Kubernetes", "Microservices", "Platform Operations", "Delivery Leadership"],
+      outcome: "Streamlined service delivery at scale and improved operational consistency.",
+      href: "#experience",
+      repo: ""
     },
     {
-      title: "Product Experimentation Framework",
+      title: "LinkedIn Technical Solutions Agile Transformation",
       summary:
-        "Built a lightweight experimentation operating model with templates, scorecards, and implementation guidance.",
-      stack: ["Strategy", "Analytics", "Documentation", "A/B testing"],
-      outcome: "Created a repeatable way to prioritize opportunities and communicate impact with greater confidence.",
-      href: "https://example.com/project-experiments",
-      repo: "https://github.com/your-handle/project-experiments"
+        "Introduced Agile workflows, task tracking, and KPI reporting across support operations.",
+      stack: ["Jira", "Workflow Design", "Operational Analytics", "Stakeholder Reporting"],
+      outcome: "Increased visibility, productivity, and measurable impact across global technical support operations.",
+      href: "#experience",
+      repo: ""
     }
   ] satisfies ProjectItem[],
   education: [
     {
-      title: "B.S. in Information Systems",
-      organization: "Your University",
-      date: "2012",
-      detail: "Focus on systems design, business analysis, and digital product development."
+      title: "BSc (Hons) Computer Science - First Class",
+      organization: "Technological University Dublin",
+      date: "2014-2018",
+      detail: "Undergraduate degree in computer science with first-class honours."
     },
     {
-      title: "Professional Scrum Product Owner",
-      organization: "Scrum.org",
-      date: "2020",
-      detail: "Credential focused on product ownership, backlog strategy, and delivery alignment."
+      title: "Registered Scrum Master",
+      organization: "Scrum Inc & Scrum Alliance",
+      date: "2024-2025, 2019-2021",
+      detail: "Certification in Agile facilitation, delivery leadership, and team effectiveness."
+    },
+    {
+      title: "Registered Product Owner",
+      organization: "Scrum Inc",
+      date: "2024-2025",
+      detail: "Credential focused on product ownership and value-driven delivery."
+    },
+    {
+      title: "ITIL Foundation Certification",
+      organization: "PeopleCert",
+      date: "2018",
+      detail: "Service management foundation focused on process quality and support operations."
     }
   ] satisfies EducationItem[],
   contact: {
-    email: "hello@example.com",
-    linkedin: "https://www.linkedin.com/in/your-profile",
-    github: "https://github.com/your-handle",
-    resumeHref: "assets/resume.html",
+    phone: "+353 85 824 1413",
+    email: "aaronmulvaney@gmail.com",
+    linkedin: "https://www.linkedin.com/in/aaronmulvaney/",
+    github: "https://github.com/mulvaney08/aaron.mulvaney",
+    resumeHref: "assets/AaronResume26.pdf",
     resumeLabel: "Download Resume"
   },
   footer: {
-    copyright: `© ${new Date().getFullYear()} Aaron Mulvaney`,
+    copyright: `Copyright ${new Date().getFullYear()} Aaron Mulvaney`,
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/your-profile" },
-      { label: "GitHub", href: "https://github.com/your-handle" },
-      { label: "Email", href: "mailto:hello@example.com" }
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/aaronmulvaney/" },
+      { label: "GitHub", href: "https://github.com/mulvaney08/aaron.mulvaney" },
+      { label: "Email", href: "mailto:aaronmulvaney@gmail.com" }
     ] satisfies SocialLink[]
   }
 } as const;

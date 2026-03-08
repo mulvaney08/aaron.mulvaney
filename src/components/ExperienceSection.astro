@@ -14,8 +14,8 @@ const { experience } = Astro.props;
     <SectionHeading
       id="experience-title"
       eyebrow="Experience"
-      title="Leadership, delivery, and product work with measurable impact."
-      intro="Each role is framed around scope, operating context, and outcomes rather than generic responsibilities."
+      title="Operational leadership and delivery impact across platform-critical roles."
+      intro="Each role highlights scope, execution ownership, and measurable outcomes."
     />
     <div class="timeline">
       {experience.map((item) => (
@@ -26,7 +26,13 @@ const { experience } = Astro.props;
           </div>
           <div class="timeline-body">
             <h3>{item.role}</h3>
-            <p class="timeline-company">{item.company}</p>
+            <p class="timeline-company">
+              {item.companyHref ? (
+                <a href={item.companyHref} target="_blank" rel="noreferrer">{item.company}</a>
+              ) : (
+                item.company
+              )}
+            </p>
             <p>{item.summary}</p>
             <ul class="detail-list">
               {item.highlights.map((highlight) => (

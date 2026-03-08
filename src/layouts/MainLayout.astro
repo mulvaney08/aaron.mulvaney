@@ -5,9 +5,11 @@ type Props = {
   title: string;
   description: string;
   ogImage?: string;
+  author?: string;
+  jsonLd?: Record<string, unknown>;
 };
 
-const { title, description, ogImage = "assets/og-image.svg" } = Astro.props;
+const { title, description, ogImage = "assets/og-image.svg", author, jsonLd } = Astro.props;
 const canonical = Astro.url;
 const imageUrl = new URL(`${Astro.base}${ogImage}`, Astro.site ?? canonical).toString();
 ---
@@ -18,12 +20,15 @@ const imageUrl = new URL(`${Astro.base}${ogImage}`, Astro.site ?? canonical).toS
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {author && <meta name="author" content={author} />}
+    <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#0f1720" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${Astro.base}favicon.svg`} />
     <link rel="manifest" href={`${Astro.base}site.webmanifest`} />
     <link rel="canonical" href={canonical.toString()} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IE" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.toString()} />
@@ -32,6 +37,9 @@ const imageUrl = new URL(`${Astro.base}${ogImage}`, Astro.site ?? canonical).toS
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
     <title>{title}</title>
     <script is:inline>
       const storedTheme = localStorage.getItem("theme");

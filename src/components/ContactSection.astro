@@ -7,6 +7,7 @@ type Props = {
 };
 
 const { contact } = Astro.props;
+const formatUrlLabel = (url: string) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 ---
 
 <section class="section" id="contact" aria-labelledby="contact-title">
@@ -15,26 +16,34 @@ const { contact } = Astro.props;
       <SectionHeading
         id="contact-title"
         eyebrow="Contact"
-        title="Open to leadership roles, strategic consulting, and well-scoped product work."
-        intro="Use this section to make the next step obvious for a recruiter, client, or hiring manager."
+        title="Open to Staff+ operations engineering and Agile delivery leadership opportunities."
+        intro="For recruiter outreach, role discussions, or interview scheduling, email is the fastest way to reach me."
       />
       <div class="contact-actions">
         <a class="button" href={`mailto:${contact.email}`}>Email Me</a>
         <a class="button button-secondary" href={contact.resumeHref} download>{contact.resumeLabel}</a>
       </div>
       <ul class="contact-list">
+        {contact.phone && (
+          <li>
+            <span>Phone</span>
+            <a href={`tel:${contact.phone.replace(/\s+/g, "")}`}>{contact.phone}</a>
+          </li>
+        )}
         <li>
           <span>Email</span>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
         </li>
         <li>
           <span>LinkedIn</span>
-          <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
+          <a href={contact.linkedin} target="_blank" rel="noreferrer">{formatUrlLabel(contact.linkedin)}</a>
         </li>
-        <li>
-          <span>GitHub</span>
-          <a href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a>
-        </li>
+        {contact.github && contact.github !== "#" && (
+          <li>
+            <span>GitHub</span>
+            <a href={contact.github} target="_blank" rel="noreferrer">{formatUrlLabel(contact.github)}</a>
+          </li>
+        )}
       </ul>
     </div>
   </div>

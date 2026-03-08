@@ -10,9 +10,31 @@ import EducationSection from "../components/EducationSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import Footer from "../components/Footer.astro";
 import { siteData } from "../data/site";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteData.hero.name,
+  jobTitle: siteData.hero.title,
+  description: siteData.seo.description,
+  email: siteData.contact.email,
+  telephone: siteData.contact.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dublin",
+    addressCountry: "IE"
+  },
+  sameAs: [siteData.contact.linkedin, siteData.contact.github].filter(Boolean)
+};
 ---
 
-<MainLayout title={siteData.seo.title} description={siteData.seo.description} ogImage={siteData.seo.ogImage}>
+<MainLayout
+  title={siteData.seo.title}
+  description={siteData.seo.description}
+  ogImage={siteData.seo.ogImage}
+  author={siteData.hero.name}
+  jsonLd={personJsonLd}
+>
   <Header />
   <main id="content">
     <HeroSection hero={siteData.hero} />
