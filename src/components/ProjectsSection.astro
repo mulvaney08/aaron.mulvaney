@@ -1,0 +1,41 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { siteData } from "../data/site";
+
+type Props = {
+  projects: typeof siteData.projects;
+};
+
+const { projects } = Astro.props;
+---
+
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="shell">
+    <SectionHeading
+      id="projects-title"
+      eyebrow="Projects"
+      title="Selected work that demonstrates judgment, execution, and polish."
+      intro="These examples are structured to show the problem, the delivery approach, and the result."
+    />
+    <div class="project-grid">
+      {projects.map((project) => (
+        <article class="project-card card" data-reveal>
+          <div class="project-topline">
+            <h3>{project.title}</h3>
+            <p>{project.summary}</p>
+          </div>
+          <ul class="tag-list" aria-label={`${project.title} technology stack`}>
+            {project.stack.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <p class="project-outcome">{project.outcome}</p>
+          <div class="project-links">
+            <a href={project.href} target="_blank" rel="noreferrer">Live Link</a>
+            <a href={project.repo} target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

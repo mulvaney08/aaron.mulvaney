@@ -1,0 +1,20 @@
+---
+import { siteData } from "../data/site";
+
+type Props = {
+  footer: typeof siteData.footer;
+};
+
+const { footer } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="shell footer-shell">
+    <p>{footer.copyright}</p>
+    <ul class="footer-links" aria-label="Footer social links">
+      {footer.links.map((link) => (
+        <li><a href={link.href} target="_blank" rel="noreferrer">{link.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</footer>

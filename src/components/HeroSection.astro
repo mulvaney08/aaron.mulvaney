@@ -1,0 +1,43 @@
+---
+import { siteData } from "../data/site";
+
+type Props = {
+  hero: typeof siteData.hero;
+};
+
+const { hero } = Astro.props;
+---
+
+<section class="hero section" id="top">
+  <div class="shell hero-grid">
+    <div class="hero-copy" data-reveal>
+      <p class="kicker">{hero.location}</p>
+      <h1>{hero.name}</h1>
+      <p class="hero-title">{hero.title}</p>
+      <p class="hero-value">{hero.value}</p>
+      <div class="hero-actions">
+        {hero.ctas.map((cta) => (
+          <a class:list={["button", cta.kind === "secondary" && "button-secondary"]} href={cta.href}>{cta.label}</a>
+        ))}
+      </div>
+      <ul class="social-list" aria-label="Social links">
+        {hero.socialLinks.map((link) => (
+          <li><a href={link.href} target="_blank" rel="noreferrer">{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <aside class="hero-panel" data-reveal>
+      <div class="panel-card">
+        <p class="panel-label">What I bring</p>
+        <ul class="stat-list">
+          {hero.stats.map((stat) => (
+            <li>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

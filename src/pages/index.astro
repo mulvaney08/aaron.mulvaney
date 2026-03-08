@@ -1,0 +1,27 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import SkillsSection from "../components/SkillsSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import EducationSection from "../components/EducationSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import Footer from "../components/Footer.astro";
+import { siteData } from "../data/site";
+---
+
+<MainLayout title={siteData.seo.title} description={siteData.seo.description} ogImage={siteData.seo.ogImage}>
+  <Header />
+  <main id="content">
+    <HeroSection hero={siteData.hero} />
+    <AboutSection about={siteData.about} />
+    <ExperienceSection experience={siteData.experience} />
+    <SkillsSection skills={siteData.skills} />
+    <ProjectsSection projects={siteData.projects} />
+    <EducationSection education={siteData.education} />
+    <ContactSection contact={siteData.contact} />
+  </main>
+  <Footer footer={siteData.footer} />
+</MainLayout>

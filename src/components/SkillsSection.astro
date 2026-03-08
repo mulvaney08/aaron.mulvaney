@@ -1,0 +1,33 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { siteData } from "../data/site";
+
+type Props = {
+  skills: typeof siteData.skills;
+};
+
+const { skills } = Astro.props;
+---
+
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="shell">
+    <SectionHeading
+      id="skills-title"
+      eyebrow="Skills"
+      title="A practical blend of strategic, operational, and technical capability."
+      intro="The focus is breadth with enough depth to lead intelligently, ship decisively, and communicate clearly."
+    />
+    <div class="skill-grid">
+      {skills.map((group) => (
+        <article class="skill-card card" data-reveal>
+          <h3>{group.category}</h3>
+          <ul class="tag-list" aria-label={group.category}>
+            {group.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

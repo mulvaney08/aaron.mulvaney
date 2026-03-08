@@ -1,0 +1,41 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { siteData } from "../data/site";
+
+type Props = {
+  contact: typeof siteData.contact;
+};
+
+const { contact } = Astro.props;
+---
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="shell">
+    <div class="contact-panel card" data-reveal>
+      <SectionHeading
+        id="contact-title"
+        eyebrow="Contact"
+        title="Open to leadership roles, strategic consulting, and well-scoped product work."
+        intro="Use this section to make the next step obvious for a recruiter, client, or hiring manager."
+      />
+      <div class="contact-actions">
+        <a class="button" href={`mailto:${contact.email}`}>Email Me</a>
+        <a class="button button-secondary" href={contact.resumeHref} download>{contact.resumeLabel}</a>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <span>Email</span>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </li>
+        <li>
+          <span>LinkedIn</span>
+          <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
+        </li>
+        <li>
+          <span>GitHub</span>
+          <a href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

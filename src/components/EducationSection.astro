@@ -1,0 +1,31 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { siteData } from "../data/site";
+
+type Props = {
+  education: typeof siteData.education;
+};
+
+const { education } = Astro.props;
+---
+
+<section class="section" id="education" aria-labelledby="education-title">
+  <div class="shell">
+    <SectionHeading
+      id="education-title"
+      eyebrow="Education"
+      title="Credentials that support a strong product and delivery foundation."
+      intro="Keep this section concise and current so it complements experience rather than competing with it."
+    />
+    <div class="education-grid">
+      {education.map((item) => (
+        <article class="education-card card" data-reveal>
+          <p class="education-date">{item.date}</p>
+          <h3>{item.title}</h3>
+          <p class="education-org">{item.organization}</p>
+          <p>{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
